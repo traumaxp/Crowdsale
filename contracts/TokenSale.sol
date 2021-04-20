@@ -2,35 +2,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.5.5;
 
-import "@openzeppelin/contracts/crowdsale/Crowdsale.sol";
+
+
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/MintableToken.sol";
 import "@openzeppelin/contracts/drafts/TokenVesting.sol";
+import "@openzeppelin/contracts/crowdsale/Crowdsale.sol";
+import "@openzeppelin/contracts/crowdsale/emission/MintedCrowdsale.sol";
+import "@openzeppelin/contracts/crowdsale/validation/TimedCrowdsale.sol";
 
-
-/**
- * @title SimpleCrowdsale
- * @dev This is an example of a fully fledged crowdsale.
- */
-contract SimpleCrowdsale is Crowdsale {
-    constructor(
-        uint256 rate,
-        address payable wallet,
-        ERC20 _token
-    ) public Crowdsale(rate, wallet, _token) {}
-}
-
-// import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
-// import "openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
-// import "openzeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
-// import "openzeppelin-solidity/contracts/token/ERC20/TokenTimelock.sol";
-// import "openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol";
-// import "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol";
-// import "openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol";
-// import "openzeppelin-solidity/contracts/crowdsale/validation/TimedCrowdsale.sol";
-// import "openzeppelin-solidity/contracts/crowdsale/validation/WhitelistedCrowdsale.sol";
-// import "openzeppelin-solidity/contracts/crowdsale/distribution/RefundableCrowdsale.sol";
-
-// contract DappTokenCrowdsale is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCrowdsale, WhitelistedCrowdsale, RefundableCrowdsale {
+contract DappTokenCrowdsale is Crowdsale, MintedCrowdsale, TimedCrowdsale, TokenVesting {
 
 //   // Track investor contributions
 // //   uint256 public investorMinCap = 2000000000000000; // 0.002 ether
@@ -154,9 +135,9 @@ contract SimpleCrowdsale is Crowdsale {
 
 //       uint256 _finalTotalSupply = _alreadyMinted.div(tokenSalePercentage).mul(100);
 
-//       foundersTimelock   = new TokenTimelock(token, foundersFund, releaseTime);
-//       foundationTimelock = new TokenTimelock(token, foundationFund, releaseTime);
-//       partnersTimelock   = new TokenTimelock(token, partnersFund, releaseTime);
+//       foundersTimelock   = new TokenVesting(token, foundersFund, releaseTime);
+//       foundationTimelock = new TokenVesting(token, foundationFund, releaseTime);
+//       partnersTimelock   = new TokenVesting(token, partnersFund, releaseTime);
 
 //       _mintableToken.mint(address(foundersTimelock),   _finalTotalSupply.mul(foundersPercentage).div(100));
 //       _mintableToken.mint(address(foundationTimelock), _finalTotalSupply.mul(foundationPercentage).div(100));
@@ -172,4 +153,4 @@ contract SimpleCrowdsale is Crowdsale {
 //     super.finalization();
 //   }
 
-// }
+}
