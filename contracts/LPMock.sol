@@ -2,15 +2,14 @@
 pragma solidity ^0.5.5;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20Detailed.sol";
 
 // mock class using ERC20
-contract LPMock is ERC20 {
+contract LPMock is ERC20, ERC20Detailed {
     constructor (
         string memory name,
-        string memory symbol,
-        uint8 decimals
-    ) public payable ERC20(name, symbol) {
-        _setupDecimals(decimals);
+        string memory symbol
+    ) public payable ERC20Detailed(name, symbol, 18) {
     }
 
     function mint(address account, uint256 amount) public {
