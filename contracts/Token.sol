@@ -1,8 +1,14 @@
-pragma solidity ^0.8.0;
+pragma solidity ^0.5.0;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/crowdsale/Crowdsale.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-contract Token is ERC20 {
-    constructor() ERC20("MyCollectible", "MCO") {
-    }
+
+contract ICO is Crowdsale {
+    constructor(
+      uint rate,
+      address payable wallet,
+      IERC20 token
+    ) Crowdsale(rate, wallet, token) public {}
 }
+
