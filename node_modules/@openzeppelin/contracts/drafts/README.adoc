@@ -1,15 +1,23 @@
-= Draft EIPs
+= Drafts
 
-This directory contains implementations of EIPs that are still in Draft status.
+Contracts in this category should be considered unstable. They are as thoroughly reviewed as everything else in OpenZeppelin Contracts, but we have doubts about their API so we don't commit to backwards compatibility. This means these contracts can receive breaking changes in a minor version, so you should pay special attention to the changelog when upgrading. For anything that is outside of this category you can read more about xref:ROOT:api-stability.adoc[API Stability].
 
-Due to their nature as drafts, the details of these contracts may change and we cannot guarantee their xref:ROOT:releases-stability.adoc[stability]. Minor releases of OpenZeppelin Contracts may contain breaking changes for the contracts in this directory, which will be duly announced in the https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/CHANGELOG.md[changelog]. The EIPs included here are used by projects in production and this may make them less likely to change significantly.
-
-== Cryptography
-
-{{EIP712}}
+NOTE: This page is incomplete. We're working to improve it for the next release. Stay tuned!
 
 == ERC 20
 
-{{IERC20Permit}}
+{{ERC20Migrator}}
 
-{{ERC20Permit}}
+{{ERC20Snapshot}}
+
+{{TokenVesting}}
+
+== Miscellaneous
+
+{{Counters}}
+
+{{SignedSafeMath}}
+
+== ERC 1046
+
+{{ERC1046}}

@@ -1,7 +1,7 @@
 {
   "name": "@openzeppelin/contracts",
+  "version": "2.5.1",
   "description": "Secure Smart Contract library for Solidity",
-  "version": "3.4.0",
   "files": [
     "**/*.sol",
     "/build/contracts/*.json",
@@ -9,8 +9,7 @@
     "!/examples"
   ],
   "scripts": {
-    "prepare": "bash ../scripts/prepare-contracts-package.sh",
-    "prepare-docs": "cd ..; npm run prepare-docs"
+    "prepare": "bash ../scripts/prepare-contracts-package.sh"
   },
   "repository": {
     "type": "git",
