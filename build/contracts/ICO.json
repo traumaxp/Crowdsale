@@ -674,7 +674,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.2-next.0",
-  "updatedAt": "2021-04-20T11:37:01.749Z",
+  "updatedAt": "2021-04-20T11:51:05.736Z",
   "devdoc": {
     "methods": {
       "buyTokens(address)": {
