@@ -223,6 +223,21 @@
       "type": "function"
     },
     {
+      "constant": true,
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "constant": false,
       "inputs": [
         {
@@ -324,6 +339,21 @@
     {
       "constant": true,
       "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
       "name": "rate",
       "outputs": [
         {
@@ -343,6 +373,21 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -463,7 +508,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"MinterAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"MinterRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"purchaser\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"TokensPurchased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"addMinter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"}],\"name\":\"buyTokens\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"subtractedValue\",\"type\":\"uint256\"}],\"name\":\"decreaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"addedValue\",\"type\":\"uint256\"}],\"name\":\"increaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isMinter\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"rate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceMinter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"wallet\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"weiRaised\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"allowance(address,address)\":{\"details\":\"See {IERC20-allowance}.\"},\"approve(address,uint256)\":{\"details\":\"See {IERC20-approve}.     * Requirements:     * - `spender` cannot be the zero address.\"},\"balanceOf(address)\":{\"details\":\"See {IERC20-balanceOf}.\"},\"buyTokens(address)\":{\"details\":\"low level token purchase ***DO NOT OVERRIDE*** This function has a non-reentrancy guard, so it shouldn't be called by another `nonReentrant` function.\",\"params\":{\"beneficiary\":\"Recipient of the token purchase\"}},\"decreaseAllowance(address,uint256)\":{\"details\":\"Atomically decreases the allowance granted to `spender` by the caller.     * This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}.     * Emits an {Approval} event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.\"},\"increaseAllowance(address,uint256)\":{\"details\":\"Atomically increases the allowance granted to `spender` by the caller.     * This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}.     * Emits an {Approval} event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address.\"},\"mint(address,uint256)\":{\"details\":\"See {ERC20-_mint}.     * Requirements:     * - the caller must have the {MinterRole}.\"},\"rate()\":{\"return\":\"the number of token units a buyer gets per wei.\"},\"token()\":{\"return\":\"the token being sold.\"},\"totalSupply()\":{\"details\":\"See {IERC20-totalSupply}.\"},\"transfer(address,uint256)\":{\"details\":\"See {IERC20-transfer}.     * Requirements:     * - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"See {IERC20-transferFrom}.     * Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20};     * Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `amount`. - the caller must have allowance for `sender`'s tokens of at least `amount`.\"},\"wallet()\":{\"return\":\"the address where funds are collected.\"},\"weiRaised()\":{\"return\":\"the amount of wei raised.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/traumaxp/TGRB-Folder/TGR-TEST-TRUFFLE/crowdsale_test/contracts/Deployer.sol\":\"MyCrowdsaleDeployer\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/traumaxp/TGRB-Folder/TGR-TEST-TRUFFLE/crowdsale_test/contracts/CrowdsaleToken.sol\":{\"keccak256\":\"0x1cb4653ba19d46194b3db39e02b089b524eba873b1ac73ab06a8df0f2e503901\",\"urls\":[\"bzz-raw://6bdfe25159023aa9e5274af561829b4204bc32867233a91392076a0b73dc2669\",\"dweb:/ipfs/QmV5i1RzhJW4tae6AD2sF257G7bC77wnPwaGkbj9HuKSaz\"]},\"/home/traumaxp/TGRB-Folder/TGR-TEST-TRUFFLE/crowdsale_test/contracts/Deployer.sol\":{\"keccak256\":\"0xfd90468b9d0c0ff7da72bca10cd38308eaa5049188bd75d14827ab622df9e771\",\"urls\":[\"bzz-raw://0caef65f5c50b2bdf09d38f3b19c963c1e7921e571b8137935fb43724b1bbf08\",\"dweb:/ipfs/QmdKmi92pG6WnB4QPiVW73H3UCJmgEe7oShw41NwQXJJGD\"]},\"/home/traumaxp/TGRB-Folder/TGR-TEST-TRUFFLE/crowdsale_test/contracts/Token.sol\":{\"keccak256\":\"0xbb8ee9a0f8052e825093e9006a0c198808ef91029f8dd515f264607bc4cfb85b\",\"urls\":[\"bzz-raw://b32f8b0d3c4ab73da4c0dd146372f53a2045569cdf7713b215894e77936ff326\",\"dweb:/ipfs/QmaGdzTnj9PgLneGSAdcSa72KxpG8Ks5PWcpiU9ouv3L72\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x90a3995645af7562d84b9d69363ffa5ae7217714ab61e951bf7bc450f40e4061\",\"urls\":[\"bzz-raw://216ef9d6b614db4eb46970b4e84903f2534a45572dd30a79f0041f1a5830f436\",\"dweb:/ipfs/QmNPrJ4MWKUAWzKXpUqeyKRUfosaoANZAqXgvepdrCwZAG\"]},\"@openzeppelin/contracts/access/Roles.sol\":{\"keccak256\":\"0xb002c378d7b82a101bd659c341518953ca0919d342c0a400196982c0e7e7bcdb\",\"urls\":[\"bzz-raw://00a788c4631466c220b385bdd100c571d24b2deccd657615cfbcef6cadf669a4\",\"dweb:/ipfs/QmTEwDbjJNxmMNCDMqtuou3dyM8Wtp8Q9NFvn7SAVM7Jf3\"]},\"@openzeppelin/contracts/access/roles/MinterRole.sol\":{\"keccak256\":\"0xbe8eef6f2cb4e427f5c5d8a76865ccd06e55a4f1d6671ba312d45bfa705aedbf\",\"urls\":[\"bzz-raw://badf338a5e22c8658c01fe2ce89b487d9dbf6d2d9d5eb49df7415383e2498765\",\"dweb:/ipfs/QmP5aMkvFwMJyuQjKE8ADh5tkWYqonb4KjgkAjgYEVVFAv\"]},\"@openzeppelin/contracts/crowdsale/Crowdsale.sol\":{\"keccak256\":\"0xe612eb8a3023c1a4f4d7e2d0aaf7f19c25e9d772c46a6e95790ddb42ba7baa99\",\"urls\":[\"bzz-raw://8b2bba5f74117ed67570e3b73bbd3ff51153275a0fcefe34df964ccba92ae028\",\"dweb:/ipfs/QmWZF4DnkWZZYzVHz8pAxbLFRxmNiKWE2n1Chd4w2rXWYh\"]},\"@openzeppelin/contracts/crowdsale/emission/MintedCrowdsale.sol\":{\"keccak256\":\"0x343249b95ade6a20737b7f681a05a257f14a39b21043ff2e31d8e5d861d83777\",\"urls\":[\"bzz-raw://ace82fde631b4c630223282ec488c53adf0c53beb99a972736dea0a37351d55c\",\"dweb:/ipfs/QmdyGt7hjQ3D6JFr1HRaqa2xjS3EZGFomnwsqfjKHckcqx\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x640b6dee7a4b830bdfd52b5031a07fc2b12209f5b2e29e5d364a7d37f69d8076\",\"urls\":[\"bzz-raw://31113152e1ddb78fe7a4197f247591ca894e93f916867beb708d8e747b6cc74f\",\"dweb:/ipfs/QmbZaJyXdpsYGykVhHH9qpVGQg9DGCxE2QufbCUy3daTgq\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xb15af804e2bc97db51e4e103f13de9fe13f87e6b835d7a88c897966c0e58506e\",\"urls\":[\"bzz-raw://1e8cff8437557fc915a3bed968fcd8f2df9809599e665ef69c2c9ce628548055\",\"dweb:/ipfs/QmP5spYP8vs2jvLF8zNrXUbqB79hMsoEvMHiLcBxerWKcm\"]},\"@openzeppelin/contracts/token/ERC20/ERC20Mintable.sol\":{\"keccak256\":\"0xa2b957cf89692c504962afb7506999155f83385373f808243246cd5879de5940\",\"urls\":[\"bzz-raw://c44ae0ad1bce141c33b962f8b4e9228bdf8df36c8ac363b4f0bf9498b8bfc32a\",\"dweb:/ipfs/QmcSBRdFwVvy2wFZrBwo5cvqNP4UHh9Eyzf8jnxBgnPqfe\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xe5bb0f57cff3e299f360052ba50f1ea0fff046df2be070b6943e0e3c3fdad8a9\",\"urls\":[\"bzz-raw://59fd025151435da35faa8093a5c7a17de02de9d08ad27275c5cdf05050820d91\",\"dweb:/ipfs/QmQMvwEcPhoRXzbXyrdoeRtvLoifUW9Qh7Luho7bmUPRkc\"]},\"@openzeppelin/contracts/token/ERC20/SafeERC20.sol\":{\"keccak256\":\"0x6f2c9955d65c522b80f4b8792f076512d2df947d2112cbc4d98a4781ed42ede2\",\"urls\":[\"bzz-raw://7d8ec81683520c06baeef3f7e06cd82bd6fd5fa611f26857f475f6c829540aff\",\"dweb:/ipfs/QmTDkFzKnrpiV1UKnSoiZAHPuguWzokrr4pFbSPvyaSo56\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x1a8e5072509c5ea7365eb1d48030b9be865140c8fb779968da0a459a0e174a11\",\"urls\":[\"bzz-raw://03335b7b07c7c8c8d613cfdd8ec39a0b5ec133ee510bf2fe6cc5a496767bef4b\",\"dweb:/ipfs/Qmebp4nzPja645c9yXSdJkGq96oU3am3LUnG2K3R7XxyKf\"]},\"@openzeppelin/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xb63221b23818d622bfd83d18e0968307e4fcb7a35536bdceded76e1cf8349acd\",\"urls\":[\"bzz-raw://44e1e8c22362c4708a8c3362735f1465f5b05e2f7315e16c7010d694ce019d73\",\"dweb:/ipfs/QmWj9g8X1hxkXRre2kwkEjLBetjuzmSbWHD81bsSojnBkS\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"MinterAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"MinterRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"purchaser\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"TokensPurchased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"addMinter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"}],\"name\":\"buyTokens\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"subtractedValue\",\"type\":\"uint256\"}],\"name\":\"decreaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"addedValue\",\"type\":\"uint256\"}],\"name\":\"increaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isMinter\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"rate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceMinter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"wallet\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"weiRaised\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"allowance(address,address)\":{\"details\":\"See {IERC20-allowance}.\"},\"approve(address,uint256)\":{\"details\":\"See {IERC20-approve}.     * Requirements:     * - `spender` cannot be the zero address.\"},\"balanceOf(address)\":{\"details\":\"See {IERC20-balanceOf}.\"},\"buyTokens(address)\":{\"details\":\"low level token purchase ***DO NOT OVERRIDE*** This function has a non-reentrancy guard, so it shouldn't be called by another `nonReentrant` function.\",\"params\":{\"beneficiary\":\"Recipient of the token purchase\"}},\"decimals()\":{\"details\":\"Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5,05` (`505 / 10 ** 2`).     * Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei.     * NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}.\"},\"decreaseAllowance(address,uint256)\":{\"details\":\"Atomically decreases the allowance granted to `spender` by the caller.     * This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}.     * Emits an {Approval} event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.\"},\"increaseAllowance(address,uint256)\":{\"details\":\"Atomically increases the allowance granted to `spender` by the caller.     * This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}.     * Emits an {Approval} event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address.\"},\"mint(address,uint256)\":{\"details\":\"See {ERC20-_mint}.     * Requirements:     * - the caller must have the {MinterRole}.\"},\"name()\":{\"details\":\"Returns the name of the token.\"},\"rate()\":{\"return\":\"the number of token units a buyer gets per wei.\"},\"symbol()\":{\"details\":\"Returns the symbol of the token, usually a shorter version of the name.\"},\"token()\":{\"return\":\"the token being sold.\"},\"totalSupply()\":{\"details\":\"See {IERC20-totalSupply}.\"},\"transfer(address,uint256)\":{\"details\":\"See {IERC20-transfer}.     * Requirements:     * - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"See {IERC20-transferFrom}.     * Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20};     * Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `amount`. - the caller must have allowance for `sender`'s tokens of at least `amount`.\"},\"wallet()\":{\"return\":\"the address where funds are collected.\"},\"weiRaised()\":{\"return\":\"the amount of wei raised.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/traumaxp/TGRB-Folder/TGR-TEST-TRUFFLE/crowdsale_test/contracts/Deployer.sol\":\"MyCrowdsaleDeployer\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/traumaxp/TGRB-Folder/TGR-TEST-TRUFFLE/crowdsale_test/contracts/CrowdsaleToken.sol\":{\"keccak256\":\"0x1cb4653ba19d46194b3db39e02b089b524eba873b1ac73ab06a8df0f2e503901\",\"urls\":[\"bzz-raw://6bdfe25159023aa9e5274af561829b4204bc32867233a91392076a0b73dc2669\",\"dweb:/ipfs/QmV5i1RzhJW4tae6AD2sF257G7bC77wnPwaGkbj9HuKSaz\"]},\"/home/traumaxp/TGRB-Folder/TGR-TEST-TRUFFLE/crowdsale_test/contracts/Deployer.sol\":{\"keccak256\":\"0xfd90468b9d0c0ff7da72bca10cd38308eaa5049188bd75d14827ab622df9e771\",\"urls\":[\"bzz-raw://0caef65f5c50b2bdf09d38f3b19c963c1e7921e571b8137935fb43724b1bbf08\",\"dweb:/ipfs/QmdKmi92pG6WnB4QPiVW73H3UCJmgEe7oShw41NwQXJJGD\"]},\"/home/traumaxp/TGRB-Folder/TGR-TEST-TRUFFLE/crowdsale_test/contracts/Token.sol\":{\"keccak256\":\"0x841780c8fe70591644a245f187b61e9401f1a5646c2a12938f30190d892aae42\",\"urls\":[\"bzz-raw://8deeddf797689f029c322c79871dcdf8e546b61add34ea5b7a585902d7fdbcfc\",\"dweb:/ipfs/QmQKPSBkwQYX53UsrY6usmD4es7yQU1TFQskKf994C3o7K\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x90a3995645af7562d84b9d69363ffa5ae7217714ab61e951bf7bc450f40e4061\",\"urls\":[\"bzz-raw://216ef9d6b614db4eb46970b4e84903f2534a45572dd30a79f0041f1a5830f436\",\"dweb:/ipfs/QmNPrJ4MWKUAWzKXpUqeyKRUfosaoANZAqXgvepdrCwZAG\"]},\"@openzeppelin/contracts/access/Roles.sol\":{\"keccak256\":\"0xb002c378d7b82a101bd659c341518953ca0919d342c0a400196982c0e7e7bcdb\",\"urls\":[\"bzz-raw://00a788c4631466c220b385bdd100c571d24b2deccd657615cfbcef6cadf669a4\",\"dweb:/ipfs/QmTEwDbjJNxmMNCDMqtuou3dyM8Wtp8Q9NFvn7SAVM7Jf3\"]},\"@openzeppelin/contracts/access/roles/MinterRole.sol\":{\"keccak256\":\"0xbe8eef6f2cb4e427f5c5d8a76865ccd06e55a4f1d6671ba312d45bfa705aedbf\",\"urls\":[\"bzz-raw://badf338a5e22c8658c01fe2ce89b487d9dbf6d2d9d5eb49df7415383e2498765\",\"dweb:/ipfs/QmP5aMkvFwMJyuQjKE8ADh5tkWYqonb4KjgkAjgYEVVFAv\"]},\"@openzeppelin/contracts/crowdsale/Crowdsale.sol\":{\"keccak256\":\"0xe612eb8a3023c1a4f4d7e2d0aaf7f19c25e9d772c46a6e95790ddb42ba7baa99\",\"urls\":[\"bzz-raw://8b2bba5f74117ed67570e3b73bbd3ff51153275a0fcefe34df964ccba92ae028\",\"dweb:/ipfs/QmWZF4DnkWZZYzVHz8pAxbLFRxmNiKWE2n1Chd4w2rXWYh\"]},\"@openzeppelin/contracts/crowdsale/emission/MintedCrowdsale.sol\":{\"keccak256\":\"0x343249b95ade6a20737b7f681a05a257f14a39b21043ff2e31d8e5d861d83777\",\"urls\":[\"bzz-raw://ace82fde631b4c630223282ec488c53adf0c53beb99a972736dea0a37351d55c\",\"dweb:/ipfs/QmdyGt7hjQ3D6JFr1HRaqa2xjS3EZGFomnwsqfjKHckcqx\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x640b6dee7a4b830bdfd52b5031a07fc2b12209f5b2e29e5d364a7d37f69d8076\",\"urls\":[\"bzz-raw://31113152e1ddb78fe7a4197f247591ca894e93f916867beb708d8e747b6cc74f\",\"dweb:/ipfs/QmbZaJyXdpsYGykVhHH9qpVGQg9DGCxE2QufbCUy3daTgq\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xb15af804e2bc97db51e4e103f13de9fe13f87e6b835d7a88c897966c0e58506e\",\"urls\":[\"bzz-raw://1e8cff8437557fc915a3bed968fcd8f2df9809599e665ef69c2c9ce628548055\",\"dweb:/ipfs/QmP5spYP8vs2jvLF8zNrXUbqB79hMsoEvMHiLcBxerWKcm\"]},\"@openzeppelin/contracts/token/ERC20/ERC20Detailed.sol\":{\"keccak256\":\"0x4a3a810b7ebe742e897e1fd428b3eeed2196d3acea58eaf9c566ed10d545d2ed\",\"urls\":[\"bzz-raw://28d03f328e19e4099d5013de0649afaeaabac1a614e130767ab1cb4aca9775b6\",\"dweb:/ipfs/Qmb9iW7yNuYehB2NfhRMs9TakqbLVQhBhmGMkaDZ5g1Eb4\"]},\"@openzeppelin/contracts/token/ERC20/ERC20Mintable.sol\":{\"keccak256\":\"0xa2b957cf89692c504962afb7506999155f83385373f808243246cd5879de5940\",\"urls\":[\"bzz-raw://c44ae0ad1bce141c33b962f8b4e9228bdf8df36c8ac363b4f0bf9498b8bfc32a\",\"dweb:/ipfs/QmcSBRdFwVvy2wFZrBwo5cvqNP4UHh9Eyzf8jnxBgnPqfe\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xe5bb0f57cff3e299f360052ba50f1ea0fff046df2be070b6943e0e3c3fdad8a9\",\"urls\":[\"bzz-raw://59fd025151435da35faa8093a5c7a17de02de9d08ad27275c5cdf05050820d91\",\"dweb:/ipfs/QmQMvwEcPhoRXzbXyrdoeRtvLoifUW9Qh7Luho7bmUPRkc\"]},\"@openzeppelin/contracts/token/ERC20/SafeERC20.sol\":{\"keccak256\":\"0x6f2c9955d65c522b80f4b8792f076512d2df947d2112cbc4d98a4781ed42ede2\",\"urls\":[\"bzz-raw://7d8ec81683520c06baeef3f7e06cd82bd6fd5fa611f26857f475f6c829540aff\",\"dweb:/ipfs/QmTDkFzKnrpiV1UKnSoiZAHPuguWzokrr4pFbSPvyaSo56\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x1a8e5072509c5ea7365eb1d48030b9be865140c8fb779968da0a459a0e174a11\",\"urls\":[\"bzz-raw://03335b7b07c7c8c8d613cfdd8ec39a0b5ec133ee510bf2fe6cc5a496767bef4b\",\"dweb:/ipfs/Qmebp4nzPja645c9yXSdJkGq96oU3am3LUnG2K3R7XxyKf\"]},\"@openzeppelin/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xb63221b23818d622bfd83d18e0968307e4fcb7a35536bdceded76e1cf8349acd\",\"urls\":[\"bzz-raw://44e1e8c22362c4708a8c3362735f1465f5b05e2f7315e16c7010d694ce019d73\",\"dweb:/ipfs/QmWj9g8X1hxkXRre2kwkEjLBetjuzmSbWHD81bsSojnBkS\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
@@ -497,7 +542,7 @@
         "id": 28,
         "nodeType": "ImportDirective",
         "scope": 68,
-        "sourceUnit": 986,
+        "sourceUnit": 1004,
         "src": "25:21:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -522,10 +567,10 @@
               "id": 30,
               "name": "Token",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 985,
+              "referencedDeclaration": 1003,
               "src": "111:5:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Token_$985",
+                "typeIdentifier": "t_contract$_Token_$1003",
                 "typeString": "contract Token"
               }
             },
@@ -554,15 +599,16 @@
         ],
         "contractDependencies": [
           25,
-          985,
-          1012,
-          1200,
-          1477,
-          1506,
-          2216,
-          2302,
-          2371,
-          2911
+          1003,
+          1030,
+          1218,
+          1495,
+          1524,
+          2234,
+          2292,
+          2320,
+          2389,
+          2929
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -571,15 +617,16 @@
         "linearizedBaseContracts": [
           67,
           25,
-          1506,
-          1477,
-          2911,
-          985,
-          2302,
-          1200,
-          2216,
-          2371,
-          1012
+          1524,
+          1495,
+          2929,
+          1003,
+          2320,
+          1218,
+          2292,
+          2234,
+          2389,
+          1030
         ],
         "name": "MyCrowdsaleDeployer",
         "nodeType": "ContractDefinition",
@@ -605,7 +652,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                        "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                         "typeString": "contract ERC20Mintable"
                       },
                       "typeName": {
@@ -613,10 +660,10 @@
                         "id": 36,
                         "name": "ERC20Mintable",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 2302,
+                        "referencedDeclaration": 2320,
                         "src": "217:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                           "typeString": "contract ERC20Mintable"
                         }
                       },
@@ -638,7 +685,7 @@
                       "nodeType": "NewExpression",
                       "src": "239:9:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_Token_$985_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_Token_$1003_$",
                         "typeString": "function () returns (contract Token)"
                       },
                       "typeName": {
@@ -646,10 +693,10 @@
                         "id": 38,
                         "name": "Token",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 985,
+                        "referencedDeclaration": 1003,
                         "src": "243:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Token_$985",
+                          "typeIdentifier": "t_contract$_Token_$1003",
                           "typeString": "contract Token"
                         }
                       }
@@ -664,7 +711,7 @@
                     "nodeType": "FunctionCall",
                     "src": "239:11:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Token_$985",
+                      "typeIdentifier": "t_contract$_Token_$1003",
                       "typeString": "contract Token"
                     }
                   },
@@ -686,7 +733,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Crowdsale_$1477",
+                        "typeIdentifier": "t_contract$_Crowdsale_$1495",
                         "typeString": "contract Crowdsale"
                       },
                       "typeName": {
@@ -694,10 +741,10 @@
                         "id": 42,
                         "name": "Crowdsale",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 1477,
+                        "referencedDeclaration": 1495,
                         "src": "321:9:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Crowdsale_$1477",
+                          "typeIdentifier": "t_contract$_Crowdsale_$1495",
                           "typeString": "contract Crowdsale"
                         }
                       },
@@ -735,7 +782,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2926,
+                          "referencedDeclaration": 2944,
                           "src": "430:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -765,7 +812,7 @@
                         "referencedDeclaration": 37,
                         "src": "489:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                           "typeString": "contract ERC20Mintable"
                         }
                       }
@@ -781,7 +828,7 @@
                           "typeString": "address payable"
                         },
                         {
-                          "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                           "typeString": "contract ERC20Mintable"
                         }
                       ],
@@ -793,7 +840,7 @@
                       "nodeType": "NewExpression",
                       "src": "343:18:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_address_payable_$_t_contract$_IERC20_$2371_$returns$_t_contract$_CrowdsaleToken_$25_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_address_payable_$_t_contract$_IERC20_$2389_$returns$_t_contract$_CrowdsaleToken_$25_$",
                         "typeString": "function (uint256,address payable,contract IERC20) returns (contract CrowdsaleToken)"
                       },
                       "typeName": {
@@ -842,7 +889,7 @@
                             "referencedDeclaration": 43,
                             "src": "682:9:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Crowdsale_$1477",
+                              "typeIdentifier": "t_contract$_Crowdsale_$1495",
                               "typeString": "contract Crowdsale"
                             }
                           }
@@ -850,7 +897,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_Crowdsale_$1477",
+                              "typeIdentifier": "t_contract$_Crowdsale_$1495",
                               "typeString": "contract Crowdsale"
                             }
                           ],
@@ -898,7 +945,7 @@
                         "referencedDeclaration": 37,
                         "src": "658:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                           "typeString": "contract ERC20Mintable"
                         }
                       },
@@ -909,7 +956,7 @@
                       "lValueRequested": false,
                       "memberName": "addMinter",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1158,
+                      "referencedDeclaration": 1176,
                       "src": "658:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -949,7 +996,7 @@
                         "referencedDeclaration": 37,
                         "src": "703:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                           "typeString": "contract ERC20Mintable"
                         }
                       },
@@ -960,7 +1007,7 @@
                       "lValueRequested": false,
                       "memberName": "renounceMinter",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1167,
+                      "referencedDeclaration": 1185,
                       "src": "703:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
@@ -1046,7 +1093,7 @@
         "id": 28,
         "nodeType": "ImportDirective",
         "scope": 68,
-        "sourceUnit": 986,
+        "sourceUnit": 1004,
         "src": "25:21:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1071,10 +1118,10 @@
               "id": 30,
               "name": "Token",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 985,
+              "referencedDeclaration": 1003,
               "src": "111:5:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Token_$985",
+                "typeIdentifier": "t_contract$_Token_$1003",
                 "typeString": "contract Token"
               }
             },
@@ -1103,15 +1150,16 @@
         ],
         "contractDependencies": [
           25,
-          985,
-          1012,
-          1200,
-          1477,
-          1506,
-          2216,
-          2302,
-          2371,
-          2911
+          1003,
+          1030,
+          1218,
+          1495,
+          1524,
+          2234,
+          2292,
+          2320,
+          2389,
+          2929
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -1120,15 +1168,16 @@
         "linearizedBaseContracts": [
           67,
           25,
-          1506,
-          1477,
-          2911,
-          985,
-          2302,
-          1200,
-          2216,
-          2371,
-          1012
+          1524,
+          1495,
+          2929,
+          1003,
+          2320,
+          1218,
+          2292,
+          2234,
+          2389,
+          1030
         ],
         "name": "MyCrowdsaleDeployer",
         "nodeType": "ContractDefinition",
@@ -1154,7 +1203,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                        "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                         "typeString": "contract ERC20Mintable"
                       },
                       "typeName": {
@@ -1162,10 +1211,10 @@
                         "id": 36,
                         "name": "ERC20Mintable",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 2302,
+                        "referencedDeclaration": 2320,
                         "src": "217:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                           "typeString": "contract ERC20Mintable"
                         }
                       },
@@ -1187,7 +1236,7 @@
                       "nodeType": "NewExpression",
                       "src": "239:9:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_Token_$985_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_Token_$1003_$",
                         "typeString": "function () returns (contract Token)"
                       },
                       "typeName": {
@@ -1195,10 +1244,10 @@
                         "id": 38,
                         "name": "Token",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 985,
+                        "referencedDeclaration": 1003,
                         "src": "243:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Token_$985",
+                          "typeIdentifier": "t_contract$_Token_$1003",
                           "typeString": "contract Token"
                         }
                       }
@@ -1213,7 +1262,7 @@
                     "nodeType": "FunctionCall",
                     "src": "239:11:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Token_$985",
+                      "typeIdentifier": "t_contract$_Token_$1003",
                       "typeString": "contract Token"
                     }
                   },
@@ -1235,7 +1284,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Crowdsale_$1477",
+                        "typeIdentifier": "t_contract$_Crowdsale_$1495",
                         "typeString": "contract Crowdsale"
                       },
                       "typeName": {
@@ -1243,10 +1292,10 @@
                         "id": 42,
                         "name": "Crowdsale",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 1477,
+                        "referencedDeclaration": 1495,
                         "src": "321:9:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Crowdsale_$1477",
+                          "typeIdentifier": "t_contract$_Crowdsale_$1495",
                           "typeString": "contract Crowdsale"
                         }
                       },
@@ -1284,7 +1333,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2926,
+                          "referencedDeclaration": 2944,
                           "src": "430:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1314,7 +1363,7 @@
                         "referencedDeclaration": 37,
                         "src": "489:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                           "typeString": "contract ERC20Mintable"
                         }
                       }
@@ -1330,7 +1379,7 @@
                           "typeString": "address payable"
                         },
                         {
-                          "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                           "typeString": "contract ERC20Mintable"
                         }
                       ],
@@ -1342,7 +1391,7 @@
                       "nodeType": "NewExpression",
                       "src": "343:18:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_address_payable_$_t_contract$_IERC20_$2371_$returns$_t_contract$_CrowdsaleToken_$25_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_address_payable_$_t_contract$_IERC20_$2389_$returns$_t_contract$_CrowdsaleToken_$25_$",
                         "typeString": "function (uint256,address payable,contract IERC20) returns (contract CrowdsaleToken)"
                       },
                       "typeName": {
@@ -1391,7 +1440,7 @@
                             "referencedDeclaration": 43,
                             "src": "682:9:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Crowdsale_$1477",
+                              "typeIdentifier": "t_contract$_Crowdsale_$1495",
                               "typeString": "contract Crowdsale"
                             }
                           }
@@ -1399,7 +1448,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_Crowdsale_$1477",
+                              "typeIdentifier": "t_contract$_Crowdsale_$1495",
                               "typeString": "contract Crowdsale"
                             }
                           ],
@@ -1447,7 +1496,7 @@
                         "referencedDeclaration": 37,
                         "src": "658:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                           "typeString": "contract ERC20Mintable"
                         }
                       },
@@ -1458,7 +1507,7 @@
                       "lValueRequested": false,
                       "memberName": "addMinter",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1158,
+                      "referencedDeclaration": 1176,
                       "src": "658:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -1498,7 +1547,7 @@
                         "referencedDeclaration": 37,
                         "src": "703:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20Mintable_$2302",
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$2320",
                           "typeString": "contract ERC20Mintable"
                         }
                       },
@@ -1509,7 +1558,7 @@
                       "lValueRequested": false,
                       "memberName": "renounceMinter",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1167,
+                      "referencedDeclaration": 1185,
                       "src": "703:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
@@ -1574,7 +1623,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.2-next.0",
-  "updatedAt": "2021-04-22T08:25:45.935Z",
+  "updatedAt": "2021-04-22T08:47:14.205Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {
@@ -1592,6 +1641,9 @@
           "beneficiary": "Recipient of the token purchase"
         }
       },
+      "decimals()": {
+        "details": "Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5,05` (`505 / 10 ** 2`).     * Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei.     * NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}."
+      },
       "decreaseAllowance(address,uint256)": {
         "details": "Atomically decreases the allowance granted to `spender` by the caller.     * This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}.     * Emits an {Approval} event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`."
       },
@@ -1601,8 +1653,14 @@
       "mint(address,uint256)": {
         "details": "See {ERC20-_mint}.     * Requirements:     * - the caller must have the {MinterRole}."
       },
+      "name()": {
+        "details": "Returns the name of the token."
+      },
       "rate()": {
         "return": "the number of token units a buyer gets per wei."
+      },
+      "symbol()": {
+        "details": "Returns the symbol of the token, usually a shorter version of the name."
       },
       "token()": {
         "return": "the token being sold."
