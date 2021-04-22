@@ -1,45 +1,33 @@
-// const Token = artifacts.require("./Token.sol");
-// const CrowdsaleToken = artifacts.require("./CrowdsaleToken.sol");
-const MyCrowdsaleDeployer = artifacts.require("./MyCrowdsaleDeployer.sol");
+const MyToken = artifacts.require("MyToken");
+const MyCrowdsale = artifacts.require("MyCrowdsale");
 
+module.exports = async function(deployer, network, accounts) {
+  const _name = "My Token";
+  const _symbol = "MTK";
+  const _decimals = 18;
 
-module.exports = function(deployer) {
-  // deployer.deploy(Token);
-  // deployer.deploy(CrowdsaleToken);
-  deployer.deploy(MyCrowdsaleDeployer);
-};
+  const rate = 1; // 
+  const wallet = accounts[0];
+  const openingTime = '';
+  const closingTime = '';
+  
+  // Deploy Token
+  await deployer.deploy(MyToken, _name, _symbol, _decimals);
 
-// const DappToken = artifacts.require("./DappToken.sol");
-// const DappTokenCrowdsale = artifacts.require('DappTokenCrowdsale');
+  // Deploy MyCrowdsale
+  // Params:
+      // uint256 rate,    // rate in TKNbits
+      // address payable wallet,
+      // MyToken token,
+      // uint256 openingTime,     // opening time in unix epoch seconds
+      // uint256 closingTime
 
-// const ether = (n) => new web3.BigNumber(web3.toWei(n, 'ether'));
+  await deployer.deploy(MyCrowdsale, rate, wallet, MyToken.address, openingTime, closingTime);
 
-// const duration = {
-//     seconds: function (val) { return val; },
-//     minutes: function (val) { return val * this.seconds(60); },
-//     hours: function (val) { return val * this.minutes(60); },
-//     days: function (val) { return val * this.hours(24); },
-//     weeks: function (val) { return val * this.days(7); },
-//     years: function (val) { return val * this.days(365); },
-//   };
+  const myCrowdsale = await MyCrowdsale.deployed();
+  const myToken = await MyToken.deployed()
+  await myToken.transfer(myCrowdsale.address, await myToken.totalSupply());
+}
 
-// // module.exports = function(deployer, network, accounts) {
-// module.exports = function(deployer, network, accounts) {
-//     const latestTime = Math.floor(Date.now() / 1000);
-//     const _token = DappToken.address;
-//     const _rate = 1000;
-
-//     const _wallet = accounts[3]; // Collecting Wallet
-//     const _openingTime = latestTime + duration.minutes(1);
-//     const _closingTime = _openingTime + duration.minutes(2);
-//     const _cap = ether(100);
-
-//     console.log("Open: " + new Date(_openingTime*1000) + " Close: " + new Date(_closingTime*1000));
-
-//     return deployer.deploy(DappTokenCrowdsale, _rate, _wallet, _token, _cap, _openingTime, _closingTime)
-//         .then(() => {
-//             return DappToken.deployed().then((token) => {
-//                 return token.transferOwnership(DappTokenCrowdsale.address)
-//             });
-//         });
-// };
+// You can then purchase tokens
+// await myCrowdsale.sendTransaction({value: web3.utils.toWei('10', 'gwei'), gas: '220000'})
