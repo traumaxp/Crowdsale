@@ -11,10 +11,10 @@ import "@openzeppelin/contracts/crowdsale/Crowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/emission/MintedCrowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/validation/TimedCrowdsale.sol";
 
-contract DappTokenCrowdsale is Crowdsale, MintedCrowdsale, TimedCrowdsale, TokenVesting {
+contract TokenSale is Crowdsale, MintedCrowdsale, TimedCrowdsale, TokenVesting {
 
   // Track investor contributions
-//   mapping(address => uint256) public contributions;
+  mapping(address => uint256) public contributions;
 
   // Crowdsale Stages
 //   enum CrowdsaleStage { PreICO, ICO }
@@ -77,30 +77,30 @@ contract DappTokenCrowdsale is Crowdsale, MintedCrowdsale, TimedCrowdsale, Token
   * @dev Allows admin to update the crowdsale stage
   * @param _stage Crowdsale stage
   */
-  function setCrowdsaleStage(uint _stage) public onlyOwner {
-    if(uint(CrowdsaleStage.PreICO) == _stage) {
-      stage = CrowdsaleStage.PreICO;
-    } else if (uint(CrowdsaleStage.ICO) == _stage) {
-      stage = CrowdsaleStage.ICO;
-    }
+//   function setCrowdsaleStage(uint _stage) public onlyOwner {
+//     if(uint(CrowdsaleStage.PreICO) == _stage) {
+//       stage = CrowdsaleStage.PreICO;
+//     } else if (uint(CrowdsaleStage.ICO) == _stage) {
+//       stage = CrowdsaleStage.ICO;
+//     }
 
-    if(stage == CrowdsaleStage.PreICO) {
-      rate = 500;
-    } else if (stage == CrowdsaleStage.ICO) {
-      rate = 250;
-    }
-  }
+//     if(stage == CrowdsaleStage.PreICO) {
+//       rate = 500;
+//     } else if (stage == CrowdsaleStage.ICO) {
+//       rate = 250;
+//     }
+//   }
 
   /**
    * @dev forwards funds to the wallet during the PreICO stage, then the refund vault during ICO stage
    */
-  function _forwardFunds() internal {
-    if(stage == CrowdsaleStage.PreICO) {
-      wallet.transfer(msg.value);
-    } else if (stage == CrowdsaleStage.ICO) {
-      super._forwardFunds();
-    }
-  }
+//   function _forwardFunds() internal {
+//     if(stage == CrowdsaleStage.PreICO) {
+//       wallet.transfer(msg.value);
+//     } else if (stage == CrowdsaleStage.ICO) {
+//       super._forwardFunds();
+//     }
+//   }
 
   /**
   * @dev Extend parent behavior requiring purchase to respect investor min/max funding cap.
@@ -116,7 +116,6 @@ contract DappTokenCrowdsale is Crowdsale, MintedCrowdsale, TimedCrowdsale, Token
     super._preValidatePurchase(_beneficiary, _weiAmount);
     uint256 _existingContribution = contributions[_beneficiary];
     uint256 _newContribution = _existingContribution.add(_weiAmount);
-    require(_newContribution >= investorMinCap && _newContribution <= investorHardCap);
     contributions[_beneficiary] = _newContribution;
   }
 
@@ -125,8 +124,7 @@ contract DappTokenCrowdsale is Crowdsale, MintedCrowdsale, TimedCrowdsale, Token
    * @dev enables token transfers, called when owner calls finalize()
   */
   function finalization() internal {
-    if(goalReached()) {
-      ERC20Mintable _mintableToken = ERC20Mintable(token);
+      ERC20Mintable _mintableToken = ERC20Mintable (token);
       uint256 _alreadyMinted = _mintableToken.totalSupply();
 
       uint256 _finalTotalSupply = _alreadyMinted.div(tokenSalePercentage).mul(100);
@@ -139,14 +137,13 @@ contract DappTokenCrowdsale is Crowdsale, MintedCrowdsale, TimedCrowdsale, Token
       _mintableToken.mint(address(foundationTimelock), _finalTotalSupply.mul(foundationPercentage).div(100));
       _mintableToken.mint(address(partnersTimelock),   _finalTotalSupply.mul(partnersPercentage).div(100));
 
-      _mintableToken.finishMinting();
+    //   _mintableToken.finishMinting();
       // Unpause the token
     //   PausableToken _pausableToken = PausableToken(token);
     //   _pausableToken.unpause();
     //   _pausableToken.transferOwnership(wallet);
-    }
 
-    super.finalization();
+    // super.finalization();
   }
 
 }
