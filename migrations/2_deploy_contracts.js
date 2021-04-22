@@ -8,9 +8,9 @@ module.exports = async function(deployer, network, accounts) {
 
   const rate = 1; // 
   const wallet = accounts[0];
-  const openingTime = '';
-  const closingTime = '';
-  
+  const openingTime = '1619096000';
+  const closingTime = '1619096500';
+
   // Deploy Token
   await deployer.deploy(MyToken, _name, _symbol, _decimals);
 
@@ -19,7 +19,7 @@ module.exports = async function(deployer, network, accounts) {
       // uint256 rate,    // rate in TKNbits
       // address payable wallet,
       // MyToken token,
-      // uint256 openingTime,     // opening time in unix epoch seconds
+      // uint256 openingTime,   1619096000  // opening time in unix epoch seconds https://www.epochconverter.com/
       // uint256 closingTime
 
   await deployer.deploy(MyCrowdsale, rate, wallet, MyToken.address, openingTime, closingTime);

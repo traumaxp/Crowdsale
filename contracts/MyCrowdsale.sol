@@ -12,7 +12,7 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
       uint256 rate,    // rate in TKNbits
       address payable wallet,
       MyToken token,
-      uint256 openingTime,     // opening time in unix epoch seconds
+      uint256 openingTime,     // opening time in unix epoch seconds https://www.epochconverter.com/
       uint256 closingTime
   )
       Crowdsale(rate, wallet, token)
