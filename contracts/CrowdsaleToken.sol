@@ -1,17 +1,45 @@
 pragma solidity ^0.5.0;
 
+import "@openzeppelin/contracts/token/ERC20/ERC20Mintable.sol";
 import "@openzeppelin/contracts/crowdsale/Crowdsale.sol";
-import "./Token.sol";
+import "@openzeppelin/contracts/crowdsale/emission/MintedCrowdsale.sol";
 
-contract TokenSale is Crowdsale, GLDToken {
+
+
+contract MyToken is ERC20, ERC20Mintable {
+    // ... see "Tokens" for more info
+}
+
+contract MyCrowdsale is Crowdsale, MintedCrowdsale {
     constructor(
-    uint256 _rate,
-    address payable _wallet,
-    ERC20 _token
-  )
-    Crowdsale(_rate, _wallet, _token)
-    public
-  {
-  }
-  mapping(address => uint256) public contributions;
+        uint256 rate,    // rate in TKNbits
+        address payable wallet,
+        IERC20 token
+    )
+        MintedCrowdsale()
+        Crowdsale(rate, wallet, token)
+        public
+    {
+
+    }
+}
+
+contract MyCrowdsaleDeployer {
+    constructor()
+        public
+    {
+        // create a mintable token
+        ERC20Mintable token = new MyToken();
+
+        // create the crowdsale and tell it about the token
+        Crowdsale crowdsale = new MyCrowdsale(
+            1,               // rate, still in TKNbits
+            msg.sender,      // send Ether to the deployer
+            token            // the token
+        );
+        // transfer the minter role from this contract (the default)
+        // to the crowdsale, so it can mint tokens
+        token.addMinter(address(crowdsale));
+        token.renounceMinter();
+    }
 }
