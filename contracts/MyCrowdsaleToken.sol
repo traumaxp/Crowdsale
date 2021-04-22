@@ -4,7 +4,7 @@ import "@openzeppelin/contracts/crowdsale/Crowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/emission/MintedCrowdsale.sol";
 
 
-contract CrowdsaleToken is Crowdsale, MintedCrowdsale {
+contract MyCrowdsaleToken is Crowdsale, MintedCrowdsale {
     constructor(
         uint256 rate,    // rate in TKNbits
         address payable wallet,
