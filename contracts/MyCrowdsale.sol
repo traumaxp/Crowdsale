@@ -1,11 +1,14 @@
 pragma solidity ^0.5.0;
 
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./MyToken.sol";
 import "@openzeppelin/contracts/crowdsale/Crowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/emission/MintedCrowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/validation/TimedCrowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/distribution/PostDeliveryCrowdsale.sol";
 import "@openzeppelin/contracts/token/ERC20/TokenTimelock.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20Mintable.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20Pausable.sol";
 
 
 contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
@@ -28,6 +31,9 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
   address public foundationTimelock;
   address public partnersTimelock;
 
+  uint public releaseTimeFounders;
+  bool public finalized;
+
   constructor(
       uint256 rate,    // rate in TKNbits
       address payable wallet,
@@ -36,7 +42,8 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
       uint256 closingTime,
       address _foundersFund,
       address _foundationFund,
-      address _partnersFund
+      address _partnersFund,
+      uint256 _releaseTimeFounders
   )
       Crowdsale(rate, wallet, token)
       TimedCrowdsale(openingTime, closingTime)
@@ -46,6 +53,7 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
     foundersFund   = _foundersFund;
     foundationFund = _foundationFund;
     partnersFund   = _partnersFund;
+    releaseTimeFounders = _releaseTimeFounders;
   }
   /**
   * @dev Returns the amount contributed so far by a sepecific user.
@@ -75,33 +83,31 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
       contributions[beneficiary] = _newContribution;
   }
 
-  // /**
-  //  * @dev enables token transfers, called when owner calls finalize()
-  // */
-  // function finalization() internal {
-  //   if(goalReached()) {
-  //     MintableToken _mintableToken = MintableToken(token);
-  //     uint256 _alreadyMinted = _mintableToken.totalSupply();
+  function finalizeIfNeeded () internal {
+    if (!finalized && block.timestamp >= closingTime) {
+        finalization ();
+        finalized = true;
+    }
+}
 
-  //     uint256 _finalTotalSupply = _alreadyMinted.div(tokenSalePercentage).mul(100);
+  /**
+   * @dev enables token transfers, called when owner calls finalize()
+  */
+  function finalization() internal {
+      ERC20Mintable _mintableToken = ERC20Mintable(token);
+      uint256 _alreadyMinted = _mintableToken.totalSupply();
 
-  //     foundersTimelock   = new TokenTimelock(token, foundersFund, releaseTime);
-  //     foundationTimelock = new TokenTimelock(token, foundationFund, releaseTime);
-  //     partnersTimelock   = new TokenTimelock(token, partnersFund, releaseTime);
+      uint256 _finalTotalSupply = _alreadyMinted.div(tokenSalePercentage).mul(100);
 
-  //     _mintableToken.mint(address(foundersTimelock),   _finalTotalSupply.mul(foundersPercentage).div(100));
-  //     _mintableToken.mint(address(foundationTimelock), _finalTotalSupply.mul(foundationPercentage).div(100));
-  //     _mintableToken.mint(address(partnersTimelock),   _finalTotalSupply.mul(partnersPercentage).div(100));
+      foundersTimelock   = new TokenTimelock(token, foundersFund, releaseTimeFounders);
+      // foundationTimelock = new TokenTimelock(token, foundationFund, releaseTime);
+      // partnersTimelock   = new TokenTimelock(token, partnersFund, releaseTime);
 
-  //     _mintableToken.finishMinting();
-  //     // Unpause the token
-  //     PausableToken _pausableToken = PausableToken(token);
-  //     _pausableToken.unpause();
-  //     _pausableToken.transferOwnership(wallet);
-  //   }
+      _mintableToken.mint(address(foundersTimelock),   _finalTotalSupply.mul(foundersPercentage).div(100));
+      _mintableToken.mint(address(foundationTimelock), _finalTotalSupply.mul(foundationPercentage).div(100));
+      _mintableToken.mint(address(partnersTimelock),   _finalTotalSupply.mul(partnersPercentage).div(100));
 
-  //   super.finalization();
-  // }
+  }
 
 
 }
