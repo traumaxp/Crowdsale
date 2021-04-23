@@ -1,4 +1,4 @@
-// const { projectId, mnemonic } = require('./secrets.json');
+const { projectId, mnemonic } = require('./secrets.json');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
@@ -32,13 +32,14 @@ module.exports = {
      port: 7545,
      network_id: "*"
    },
-   ropsten: {
-    provider: function() {
-      return new HDWalletProvider(MNEMONIC, "https://ropsten.infura.io/YOUR_API_KEY")
-    },
-    network_id: 3,
-    gas: 4000000      //make sure this gas allocation isn't over 4M, which is the max
-    }
+  ropsten: {
+    provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${projectId}`),
+    network_id: 5,       // Ropsten's id
+    gas: 3727506,        // Ropsten has a lower block limit than mainnet
+    confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+    timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+    skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
   }
+}
   
 };

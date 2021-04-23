@@ -1,5 +1,5 @@
 const MyToken = artifacts.require("MyToken");
-const MyCrowdsale = artifacts.require("MyCrowdsale");
+// const MyCrowdsale = artifacts.require("MyCrowdsale");
 
 module.exports = async function(deployer, network, accounts) {
   const _name = "My Token";
@@ -22,11 +22,11 @@ module.exports = async function(deployer, network, accounts) {
       // uint256 openingTime,   1619096000  // opening time in unix epoch seconds https://www.epochconverter.com/
       // uint256 closingTime
 
-  await deployer.deploy(MyCrowdsale, rate, wallet, MyToken.address, openingTime, closingTime);
+  // await deployer.deploy(MyCrowdsale, rate, wallet, MyToken.address, openingTime, closingTime);
 
-  const myCrowdsale = await MyCrowdsale.deployed();
-  const myToken = await MyToken.deployed()
-  await myToken.transfer(myCrowdsale.address, await myToken.totalSupply());
+  // const myCrowdsale = await MyCrowdsale.deployed();
+  // const myToken = await MyToken.deployed()
+  // await myToken.transfer(myCrowdsale.address, await myToken.totalSupply());
 }
 
 // You can then purchase tokens
