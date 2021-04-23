@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/crowdsale/Crowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/emission/MintedCrowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/validation/TimedCrowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/distribution/PostDeliveryCrowdsale.sol";
+import "@openzeppelin/contracts/token/ERC20/TokenTimelock.sol";
 
 
 contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
@@ -51,11 +52,11 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
   * @param _beneficiary Address of contributor
   * @return User contribution so far
   */
-  // function getUserContribution(address _beneficiary)
-  //   public view returns (uint256)
-  // {
-  //   return contributions[_beneficiary];
-  // }
+  function getUserContribution(address _beneficiary)
+    public view returns (uint256)
+  {
+    return contributions[_beneficiary];
+  }
 
   // function _preValidatePurchase(
   //   address _beneficiary,
@@ -66,7 +67,6 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
   //   super._preValidatePurchase(_beneficiary, _weiAmount);
   //   uint256 _existingContribution = contributions[_beneficiary];
   //   uint256 _newContribution = _existingContribution.add(_weiAmount);
-  //   require(_newContribution >= investorMinCap && _newContribution <= investorHardCap);
   //   contributions[_beneficiary] = _newContribution;
   // }
 

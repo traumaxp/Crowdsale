@@ -435,7 +435,7 @@
         "id": 794,
         "nodeType": "ImportDirective",
         "scope": 872,
-        "sourceUnit": 2685,
+        "sourceUnit": 2698,
         "src": "57:55:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -446,7 +446,7 @@
         "id": 795,
         "nodeType": "ImportDirective",
         "scope": 872,
-        "sourceUnit": 2743,
+        "sourceUnit": 2756,
         "src": "113:63:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -460,10 +460,10 @@
               "id": 796,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2684,
+              "referencedDeclaration": 2697,
               "src": "223:5:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$2684",
+                "typeIdentifier": "t_contract$_ERC20_$2697",
                 "typeString": "contract ERC20"
               }
             },
@@ -478,10 +478,10 @@
               "id": 798,
               "name": "ERC20Detailed",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2742,
+              "referencedDeclaration": 2755,
               "src": "230:13:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20Detailed_$2742",
+                "typeIdentifier": "t_contract$_ERC20Detailed_$2755",
                 "typeString": "contract ERC20Detailed"
               }
             },
@@ -491,10 +491,10 @@
           }
         ],
         "contractDependencies": [
-          1128,
-          2684,
-          2742,
-          2839
+          1141,
+          2697,
+          2755,
+          2852
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -502,10 +502,10 @@
         "id": 871,
         "linearizedBaseContracts": [
           871,
-          2742,
-          2684,
-          2839,
-          1128
+          2755,
+          2697,
+          2852,
+          1141
         ],
         "name": "LPMock",
         "nodeType": "ContractDefinition",
@@ -576,10 +576,10 @@
                   "name": "ERC20Detailed",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2742,
+                  "referencedDeclaration": 2755,
                   "src": "342:13:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_ERC20Detailed_$2742_$",
+                    "typeIdentifier": "t_type$_t_contract$_ERC20Detailed_$2755_$",
                     "typeString": "type(contract ERC20Detailed)"
                   }
                 },
@@ -712,7 +712,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2568,
+                      "referencedDeclaration": 2581,
                       "src": "451:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -870,7 +870,7 @@
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2612,
+                      "referencedDeclaration": 2625,
                       "src": "550:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1045,7 +1045,7 @@
                       "name": "_transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2525,
+                      "referencedDeclaration": 2538,
                       "src": "669:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -1247,7 +1247,7 @@
                       "name": "_approve",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2654,
+                      "referencedDeclaration": 2667,
                       "src": "797:8:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -1414,7 +1414,7 @@
         "id": 794,
         "nodeType": "ImportDirective",
         "scope": 872,
-        "sourceUnit": 2685,
+        "sourceUnit": 2698,
         "src": "57:55:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1425,7 +1425,7 @@
         "id": 795,
         "nodeType": "ImportDirective",
         "scope": 872,
-        "sourceUnit": 2743,
+        "sourceUnit": 2756,
         "src": "113:63:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1439,10 +1439,10 @@
               "id": 796,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2684,
+              "referencedDeclaration": 2697,
               "src": "223:5:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$2684",
+                "typeIdentifier": "t_contract$_ERC20_$2697",
                 "typeString": "contract ERC20"
               }
             },
@@ -1457,10 +1457,10 @@
               "id": 798,
               "name": "ERC20Detailed",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2742,
+              "referencedDeclaration": 2755,
               "src": "230:13:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20Detailed_$2742",
+                "typeIdentifier": "t_contract$_ERC20Detailed_$2755",
                 "typeString": "contract ERC20Detailed"
               }
             },
@@ -1470,10 +1470,10 @@
           }
         ],
         "contractDependencies": [
-          1128,
-          2684,
-          2742,
-          2839
+          1141,
+          2697,
+          2755,
+          2852
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -1481,10 +1481,10 @@
         "id": 871,
         "linearizedBaseContracts": [
           871,
-          2742,
-          2684,
-          2839,
-          1128
+          2755,
+          2697,
+          2852,
+          1141
         ],
         "name": "LPMock",
         "nodeType": "ContractDefinition",
@@ -1555,10 +1555,10 @@
                   "name": "ERC20Detailed",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2742,
+                  "referencedDeclaration": 2755,
                   "src": "342:13:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_ERC20Detailed_$2742_$",
+                    "typeIdentifier": "t_type$_t_contract$_ERC20Detailed_$2755_$",
                     "typeString": "type(contract ERC20Detailed)"
                   }
                 },
@@ -1691,7 +1691,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2568,
+                      "referencedDeclaration": 2581,
                       "src": "451:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1849,7 +1849,7 @@
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2612,
+                      "referencedDeclaration": 2625,
                       "src": "550:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -2024,7 +2024,7 @@
                       "name": "_transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2525,
+                      "referencedDeclaration": 2538,
                       "src": "669:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -2226,7 +2226,7 @@
                       "name": "_approve",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2654,
+                      "referencedDeclaration": 2667,
                       "src": "797:8:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -2372,7 +2372,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.2-next.0",
-  "updatedAt": "2021-04-23T07:52:13.732Z",
+  "updatedAt": "2021-04-23T08:57:10.756Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {
