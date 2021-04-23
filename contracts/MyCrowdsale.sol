@@ -58,18 +58,22 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
     return contributions[_beneficiary];
   }
 
-  // function _preValidatePurchase(
-  //   address _beneficiary,
-  //   uint256 _weiAmount
-  // )
-  //   internal
-  // {
-  //   super._preValidatePurchase(_beneficiary, _weiAmount);
-  //   uint256 _existingContribution = contributions[_beneficiary];
-  //   uint256 _newContribution = _existingContribution.add(_weiAmount);
-  //   contributions[_beneficiary] = _newContribution;
-  // }
+  function _preValidatePurchase(
+    address _beneficiary,
+    uint256 _weiAmount
+  )
+    internal view
+  {
+    super._preValidatePurchase(_beneficiary, _weiAmount);
+  }
 
+  function validPurchase (address beneficiary,uint256 weiAmount) public 
+  {
+      _preValidatePurchase(beneficiary, weiAmount);
+      uint256 _existingContribution = contributions[beneficiary];
+      uint256 _newContribution = _existingContribution.add(weiAmount);
+      contributions[beneficiary] = _newContribution;
+  }
 
   // /**
   //  * @dev enables token transfers, called when owner calls finalize()
