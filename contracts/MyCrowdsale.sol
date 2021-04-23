@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-import './MyToken.sol';
+import "./MyToken.sol";
 import "@openzeppelin/contracts/crowdsale/Crowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/emission/MintedCrowdsale.sol";
 import "@openzeppelin/contracts/crowdsale/validation/TimedCrowdsale.sol";
