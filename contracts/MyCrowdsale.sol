@@ -83,31 +83,31 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
       contributions[beneficiary] = _newContribution;
   }
 
-  function finalizeIfNeeded () internal {
-    if (!finalized && block.timestamp >= closingTime) {
-        finalization ();
-        finalized = true;
-    }
-}
+  // function finalizeIfNeeded () internal {
+  //   if (!finalized && block.timestamp >= closingTime) {
+  //       finalization ();
+  //       finalized = true;
+  //   }
+  // }
 
   /**
    * @dev enables token transfers, called when owner calls finalize()
   */
-  function finalization() internal {
-      ERC20Mintable _mintableToken = ERC20Mintable(token);
-      uint256 _alreadyMinted = _mintableToken.totalSupply();
+  // function finalization() internal {
+  //     ERC20Mintable _mintableToken = ERC20Mintable(token);
+  //     uint256 _alreadyMinted = _mintableToken.totalSupply();
 
-      uint256 _finalTotalSupply = _alreadyMinted.div(tokenSalePercentage).mul(100);
+  //     uint256 _finalTotalSupply = _alreadyMinted.div(tokenSalePercentage).mul(100);
 
-      foundersTimelock   = new TokenTimelock(token, foundersFund, releaseTimeFounders);
-      // foundationTimelock = new TokenTimelock(token, foundationFund, releaseTime);
-      // partnersTimelock   = new TokenTimelock(token, partnersFund, releaseTime);
+  //     foundersTimelock   = new TokenTimelock(token, foundersFund, releaseTimeFounders);
+  //     // foundationTimelock = new TokenTimelock(token, foundationFund, releaseTime);
+  //     // partnersTimelock   = new TokenTimelock(token, partnersFund, releaseTime);
 
-      _mintableToken.mint(address(foundersTimelock),   _finalTotalSupply.mul(foundersPercentage).div(100));
-      _mintableToken.mint(address(foundationTimelock), _finalTotalSupply.mul(foundationPercentage).div(100));
-      _mintableToken.mint(address(partnersTimelock),   _finalTotalSupply.mul(partnersPercentage).div(100));
+  //     _mintableToken.mint(address(foundersTimelock),   _finalTotalSupply.mul(foundersPercentage).div(100));
+  //     _mintableToken.mint(address(foundationTimelock), _finalTotalSupply.mul(foundationPercentage).div(100));
+  //     _mintableToken.mint(address(partnersTimelock),   _finalTotalSupply.mul(partnersPercentage).div(100));
 
-  }
+  // }
 
 
 }
