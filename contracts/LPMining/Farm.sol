@@ -64,7 +64,13 @@ contract Farm is Ownable {
     event Withdraw(address indexed user, uint256 indexed pid, uint256 amount);
     event EmergencyWithdraw(address indexed user, uint256 indexed pid, uint256 amount);
 
-    constructor(IERC20 _erc20, uint256 _rewardPerBlock, uint256 _startBlock) public {
+    constructor(
+        IERC20 _erc20,
+        uint256 _rewardPerBlock,
+        uint256 _startBlock
+        )
+        public
+        {
         erc20 = _erc20;
         rewardPerBlock = _rewardPerBlock;
         startBlock = _startBlock;

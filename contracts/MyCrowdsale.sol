@@ -15,23 +15,56 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
   
   mapping(address => uint256) public contributions;
 
+
   // Token Distribution
-  uint256 public tokenSalePercentage = 70;
-  uint256 public foundersPercentage = 10;
-  uint256 public foundationPercentage = 10;
-  uint256 public partnersPercentage = 10;
+  uint256 public tokenSalePercentage = 12.5;
+  uint256 public founderAPercentage = 10;
+  uint256 public founderBPercentage = 10;
+  uint256 public futurTeamPercentage = 4;
+  uint256 public advisorsPercentage = 2;
+  uint256 public LPreserveBootstrapPercentage = 4.5;
+  uint256 public LPreserveIncentivePercentage = 37.5;
+  uint256 public TGPAirdropPercentage = 2;
+  uint256 public stakingReserveIncentivePercentage = 9;
+  uint256 public marketingReservePercentage = 6;
+  uint256 public bugsBountyCompensationPercentage = 2.5;
+
+
+
 
   // Token reserve funds
-  address public foundersFund;
-  address public foundationFund;
-  address public partnersFund;
+  address public founderAFund;
+  address public founderBFund;
+  address public futurTeamFund;
+  address public advisorsFund;
+  address public LPreserveBootstrapFund;
+  address public LPreserveIncentiveFund;
+  address public TGPAirdropFund;
+  address public stakingReserveIncentiveFund;
+  address public marketingReserveFund;
+  address public bugsBountyCompensationFund;
 
   // Token time lock
+  address public founderATimelock; // Vesting 36months
+  address public founderBTimelock; // Vesting 36 months
+  address public futurTeamTimelock; // Vesting 36 months
+  address public advisorsTimelock; // Vesting 12months
+  address public LPreserveBootstrapTimelock; // Vesting 10months
+  address public LPreserveIncentiveTimelock; // No vesting = locked in sc for lp mining
+  address public TGPAirdropTimelock;
+  address public stakingReserveIncentiveTimelock; // No vesting = locked in sc for Staking
+  address public marketingReserveTimelock; // Vesting 36months
+  address public bugsBountyCompensationTimelock;
   address public foundersTimelock;
   address public foundationTimelock;
   address public partnersTimelock;
 
-  uint public releaseTimeFounders;
+  // Token time lock
+  // address public foundersTimelock;
+  // address public foundationTimelock;
+  // address public partnersTimelock;
+
+  uint public releaseTimeStaking;
   bool public finalized;
 
   constructor(
@@ -43,17 +76,17 @@ contract MyCrowdsale is Crowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
       address _foundersFund,
       address _foundationFund,
       address _partnersFund,
-      uint256 _releaseTimeFounders
+      uint256 _releaseTimeStaking
   )
       Crowdsale(rate, wallet, token)
       TimedCrowdsale(openingTime, closingTime)
       PostDeliveryCrowdsale()
       public
   {
-    foundersFund   = _foundersFund;
-    foundationFund = _foundationFund;
-    partnersFund   = _partnersFund;
-    releaseTimeFounders = _releaseTimeFounders;
+    // foundersFund   = _foundersFund;
+    // foundationFund = _foundationFund;
+    // partnersFund   = _partnersFund;
+    // releaseTimeStaking = _releaseTimeStaking;
   }
   /**
   * @dev Returns the amount contributed so far by a sepecific user.
