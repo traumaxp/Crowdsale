@@ -2,7 +2,7 @@
  *Submitted for verification at Etherscan.io on 2019-04-20
 */
 
-pragma solidity 0.5.2;
+pragma solidity ^0.5.0;
 
 // File: openzeppelin-solidity/contracts/ownership/Ownable.sol
 
